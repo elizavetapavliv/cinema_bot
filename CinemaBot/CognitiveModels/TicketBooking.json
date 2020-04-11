@@ -1,0 +1,325 @@
+﻿{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "TicketBooking",
+  "desc": "Luis Model for CinemaBot",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "BookTicket"
+    },
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Movie",
+      "roles": []
+    }
+  ],
+  "composites": [
+    {
+      "name": "Cinema",
+      "children": [
+        "AvailableCinema"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "AvailableCinema",
+      "subLists": [
+        {
+          "canonicalForm": "Galileo",
+          "list": [
+            "galileo"
+          ]
+        },
+        {
+          "canonicalForm": "Dana Mall",
+          "list": [
+            "dana mall",
+            "dana",
+            "voka"
+          ]
+        },
+        {
+          "canonicalForm": "ArenaCity",
+          "list": [
+            "arenaCity",
+            "arenacity",
+            "arena city",
+            "arena"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "book a ticket",
+      "intent": "BookTicket",
+      "entities": []
+    },
+    {
+      "text": "book a ticket for Give your soul",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 18,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "book a ticket for The Invisible Man",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 18,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "book a hotel in new york",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a restaurant",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book ticket for Bloodshot in Galileo on feb 14th 2020",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 16,
+          "endPos": 24
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "book ticket in arena city on feb 14th 2020",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Cinema",
+          "startPos": 15,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "book me a ticket for Sonic in the movies in arena city",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 19,
+          "endPos": 37
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 42,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "bye",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel booking",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "exit",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "log off",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "nothing",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "nth",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "find cinema near me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "choose film for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ticket to shoemaker",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "ticket for Hotel Belgrade in dana mall on feb 14th 2020",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 11,
+          "endPos": 24
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 29,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "watch Forward in voka on may 5th 2020",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 17,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "watch Hotel Belgrade",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 6,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "watch Forward in galileo",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i'd like to rent a car",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ignore",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "see Forward",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 4,
+          "endPos": 10
+        }
+      ]
+    },
+
+    {
+      "text": "see Scam in Miami in Dana Mall",
+      "intent": "BookTicket",
+      "entities": [
+        {
+          "entity": "Movie",
+          "startPos": 4,
+          "endPos": 16
+        },
+        {
+          "entity": "Cinema",
+          "startPos": 21,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
+      "entities": []
+    }
+  ],
+  "settings": []
+}
